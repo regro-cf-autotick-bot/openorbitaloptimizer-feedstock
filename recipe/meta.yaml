@@ -1,5 +1,5 @@
 {% set name = "OpenOrbitalOptimizer" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SusiLehtola/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 8e6a2b57f408244a348d14d64a3f7efdda30a5a0bcaa219726ef8f1a0ac7cf69
+  sha256: 6cc93ddc03ac714617b597ccca0eba231fc48900a137b4e5c9480050a3807f48
 
 build:
   number: 0
@@ -17,8 +17,8 @@ build:
 #   see ambit, gdma, libefp, libxc, etc.)
 outputs:
   - name: openorbitaloptimizer
-    script: build-cxx.sh                                                       # [unix]
-    script: bld-cxx.bat                                                        # [win]
+    script: build-cxx.sh  # [unix]
+    script: bld-cxx.bat  # [win]
     build:
       run_exports:
         - {{ pin_subpackage('openorbitaloptimizer', max_pin='x.x') }}
